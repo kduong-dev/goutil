@@ -4,10 +4,12 @@ import (
 	"fmt"
 	"os"
 	"runtime/debug"
+
+	"goutil/logx"
 )
 
 func LogError(message string) {
-	fmt.Fprintf(os.Stderr, "FATAL: '%s'\n%s", message, debug.Stack())
+	logx.Log("FATAL", logx.ColorRed, fmt.Sprintf("'%s'\n%s", message, debug.Stack()))
 	os.Exit(1)
 }
 
