@@ -1,8 +1,9 @@
 package httpx
 
 import (
-	"log"
 	"net/http"
+
+	"goutil/logx"
 
 	"github.com/ansel1/merry"
 )
@@ -22,7 +23,7 @@ func SendErrorResponse(responseWriter http.ResponseWriter, err error) {
 		message = "internal server error"
 	}
 	if statusCode >= http.StatusInternalServerError {
-		log.Printf("error: %+v", err)
+		logx.Warnf("%d %s: %+v", statusCode, http.StatusText(statusCode), err)
 	}
 	SendJSONResponse(responseWriter, statusCode, ResponseMessage{Message: message})
 }
