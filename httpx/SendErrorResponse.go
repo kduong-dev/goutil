@@ -3,7 +3,7 @@ package httpx
 import (
 	"net/http"
 
-	"goutil/logx"
+	"github.com/kduong-dev/goutil/logx"
 
 	"github.com/ansel1/merry"
 )

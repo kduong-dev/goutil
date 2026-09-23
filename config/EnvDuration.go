@@ -4,7 +4,7 @@ import (
 	"os"
 	"time"
 
-	"goutil/fatal"
+	"github.com/kduong-dev/goutil/fatal"
 )
 
 func EnvDuration(key string, dflt time.Duration) time.Duration {

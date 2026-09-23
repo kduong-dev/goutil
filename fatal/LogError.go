@@ -5,7 +5,7 @@ import (
 	"os"
 	"runtime/debug"
 
-	"goutil/logx"
+	"github.com/kduong-dev/goutil/logx"
 )
 
 func LogError(message string) {

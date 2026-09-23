@@ -3,7 +3,7 @@ package httpx_test
 import (
 	"encoding/json"
 	"errors"
-	"goutil/httpx"
+	"github.com/kduong-dev/goutil/httpx"
 	"net/http"
 	"net/http/httptest"
 	"testing"

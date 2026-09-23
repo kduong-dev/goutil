@@ -1,7 +1,7 @@
 package config
 
 import (
-	"goutil/fatal"
+	"github.com/kduong-dev/goutil/fatal"
 	"os"
 	"strconv"
 )

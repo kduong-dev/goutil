@@ -4,7 +4,7 @@ import (
 	"os"
 	"strconv"
 
-	"goutil/fatal"
+	"github.com/kduong-dev/goutil/fatal"
 )
 
 func EnvBool(key string, dflt bool) bool {

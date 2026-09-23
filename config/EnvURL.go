@@ -4,7 +4,7 @@ import (
 	"net/url"
 	"os"
 
-	"goutil/fatal"
+	"github.com/kduong-dev/goutil/fatal"
 )
 
 func EnvURLOrFatal(key string) *url.URL {
