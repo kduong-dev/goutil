@@ -6,6 +6,7 @@ require (
 	github.com/alicebob/miniredis/v2 v2.39.0
 	github.com/ansel1/merry v1.8.2
 	github.com/redis/go-redis/v9 v9.22.0
+	github.com/rs/cors v1.11.1
 	github.com/smartystreets/goconvey v1.8.1
 	golang.org/x/term v0.46.0
 )
