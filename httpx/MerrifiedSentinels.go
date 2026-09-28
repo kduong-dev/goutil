@@ -39,6 +39,11 @@ func (merrifiedSentinels MerrifiedSentinels) Merrify(err error) error {
 
 // MerrifyOrFatal is Merrify for calls whose only expected failures are the
 // sentinels; any other error is fatal.
+//
+// Deprecated: a handler can't tell a bug from an I/O failure such as a timeout or a client
+// disconnecting, and exiting on those takes every other request down with it. The package
+// returning the error calls fatal.OnError for its own bugs; send everything else with
+// SendErrorResponse, which responds 500 to errors that match no sentinel.
 func (merrifiedSentinels MerrifiedSentinels) MerrifyOrFatal(err error) error {
 	merrifiedError := merrifiedSentinels.lookup(err)
 	if merrifiedError == nil {
