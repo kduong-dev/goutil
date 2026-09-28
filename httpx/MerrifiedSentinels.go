@@ -2,6 +2,7 @@ package httpx
 
 import (
 	"errors"
+	"net/http"
 
 	"github.com/ansel1/merry"
 	"github.com/kduong-dev/goutil/fatal"
@@ -44,4 +45,10 @@ func (merrifiedSentinels MerrifiedSentinels) MerrifyOrFatal(err error) error {
 		fatal.OnError(err)
 	}
 	return merrifiedError
+}
+
+// SendErrorResponse is SendErrorResponse for err merrified with the matching
+// sentinel, so handlers can return the errors of the packages they call as is.
+func (merrifiedSentinels MerrifiedSentinels) SendErrorResponse(responseWriter http.ResponseWriter, err error) {
+	SendErrorResponse(responseWriter, merrifiedSentinels.Merrify(err))
 }
